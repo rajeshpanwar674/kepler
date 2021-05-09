@@ -6,8 +6,8 @@ import './List.css'
 const ForcastList = () => {
     const [selectedItem, setSelectedItem] = useState(-1);
     const forcasts = [{
-        title: 'Australia',
-        content: 'What will Australian core inflation be for Q1 2022?',
+        title: 'US GDP',
+        content: 'What will US GDP growth be in 2021?',
         forcastsMade: '100',
         currentForcast: '80%',
         probability: 'yes',
@@ -24,8 +24,8 @@ const ForcastList = () => {
         imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
     },
     {
-        title: 'Australia',
-        content: 'What will Australian core inflation be for Q1 2022?',
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
         forcastsMade: '100',
         currentForcast: '80%',
         probability: 'yes',
@@ -59,7 +59,7 @@ const ForcastList = () => {
                     </TableBody>
                 </Table>
             </div>
-            {selectedItem > 0 && <div className='detail'>
+            {selectedItem >= 0 && <div className='detail'>
                 <ForcastDetail selectedForcast={selectedForcast}></ForcastDetail>
             </div>}
         </div>
