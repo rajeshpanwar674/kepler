@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { withStyles, Hidden, Icon, IconButton, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import ForcastDetail from './Detail';
+import menu from "./square.png";
 import './List.css'
 
 const ForcastList = () => {
@@ -36,7 +37,12 @@ const ForcastList = () => {
     const selectedForcast = forcasts[selectedItem];
 
     return (
+    <>
+     <div className="headerMain"><h2>Forcast</h2>
+     <img src={menu}/>
+     </div>
         <div className='wrapper'>
+           
             <div className='listrow'>
                
                     <div className="lisWrap">
@@ -65,6 +71,8 @@ const ForcastList = () => {
             </div>}
             </div>
         </div>
+
+        </>
     );
 };
 
