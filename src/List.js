@@ -36,32 +36,34 @@ const ForcastList = () => {
     const selectedForcast = forcasts[selectedItem];
 
     return (
-        <div className='parent'>
-            <div className='list'>
-                <Table>
-                    <TableBody>
+        <div className='wrapper'>
+            <div className='listrow'>
+               
+                    <div className="lisWrap">
                         {forcasts.map((val, i) => {
                             return (
-                                <TableRow
+                                <div
                                     key={i}
                                     hover
                                     onClick={event => setSelectedItem(i)}
                                     selected={i === selectedItem}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer listItem"
                                 >
-                                    <TableCell className="max-w-64 w-64 p-0 text-center">
+                                    <div className="max-w-64 w-64 p-0 text-center listText">
                                         <b>{val.title}</b>
                                         <p>{val.content}</p>
-                                    </TableCell>
-                                </TableRow>
+                                    </div>
+                                </div>
                             );
                         })}
-                    </TableBody>
-                </Table>
+                  
+                </div>
             </div>
-            {selectedItem >= 0 && <div className='detail'>
+            <div className=' detailWrap'>
+            {selectedItem >= 0 && <div className='detailcontainer '>
                 <ForcastDetail selectedForcast={selectedForcast}></ForcastDetail>
             </div>}
+            </div>
         </div>
     );
 };
