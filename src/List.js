@@ -3,9 +3,11 @@ import { withStyles, Hidden, Icon, IconButton, Table, TableBody, TableCell, Tabl
 import ForcastDetail from './Detail';
 import menu from "./square.png";
 import './List.css'
+import TextField from '@material-ui/core/TextField';
 
 const ForcastList = () => {
     const [selectedItem, setSelectedItem] = useState(null);
+    const [searchText, setSearchText] = useState('');
     const forcasts = [{
         id: 1,
         title: 'US GDP',
@@ -39,6 +41,10 @@ const ForcastList = () => {
     },
     ]
 
+    const search = (e) => {
+        setSearchText(e.target.value);
+    }
+
     return (
         <>
             <div className="headerMain"><h2>Forcast</h2>
@@ -46,9 +52,11 @@ const ForcastList = () => {
             </div>
             <div className='wrapper'>
                 <div className='listrow'>
-
+                    <div>
+                        <TextField id="outlined-basic" label="Search" variant="outlined" onChange={search}/>
+                    </div>
                     <div className="lisWrap">
-                        {forcasts.map((val) => {
+                        {forcasts.filter(forcast=> forcast.title.toLowerCase().includes(searchText.toLowerCase())).map((val) => {
                             return (
                                 <div
                                     key={val.id}
