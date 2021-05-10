@@ -5,8 +5,9 @@ import menu from "./square.png";
 import './List.css'
 
 const ForcastList = () => {
-    const [selectedItem, setSelectedItem] = useState(-1);
+    const [selectedItem, setSelectedItem] = useState(null);
     const forcasts = [{
+        id: 1,
         title: 'US GDP',
         content: 'What will US GDP growth be in 2021?',
         forcastsMade: '100',
@@ -16,6 +17,8 @@ const ForcastList = () => {
         imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
     },
     {
+        id: 2,
+
         title: 'Australia',
         content: 'What will Australian core inflation be for Q1 2022?',
         forcastsMade: '100',
@@ -25,6 +28,7 @@ const ForcastList = () => {
         imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
     },
     {
+        id: 3,
         title: 'NSW Business Confidence',
         content: 'Will New South Wales business confidence improve or fall in 2021?',
         forcastsMade: '100',
@@ -34,26 +38,23 @@ const ForcastList = () => {
         imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
     },
     ]
-    const selectedForcast = forcasts[selectedItem];
 
     return (
-    <>
-     <div className="headerMain"><h2>Forcast</h2>
-     <img src={menu}/>
-     </div>
-        <div className='wrapper'>
-           
-            <div className='listrow'>
-               
+        <>
+            <div className="headerMain"><h2>Forcast</h2>
+                <img src={menu} />
+            </div>
+            <div className='wrapper'>
+                <div className='listrow'>
+
                     <div className="lisWrap">
-                        {forcasts.map((val, i) => {
+                        {forcasts.map((val) => {
                             return (
                                 <div
-                                    key={i}
+                                    key={val.id}
                                     hover
-                                    onClick={event => setSelectedItem(i)}
-                                    selected={i === selectedItem}
-                                    className="cursor-pointer listItem"
+                                    onClick={event => setSelectedItem(val)}
+                                    className={selectedItem && val.id === selectedItem.id ? "cursor-pointer listItem selected" : "cursor-pointer listItem"}
                                 >
                                     <div className="max-w-64 w-64 p-0 text-center listText">
                                         <b>{val.title}</b>
@@ -62,15 +63,15 @@ const ForcastList = () => {
                                 </div>
                             );
                         })}
-                  
+
+                    </div>
+                </div>
+                <div className=' detailWrap'>
+                    {selectedItem && <div className='detailcontainer '>
+                        <ForcastDetail selectedForcast={selectedItem}></ForcastDetail>
+                    </div>}
                 </div>
             </div>
-            <div className=' detailWrap'>
-            {selectedItem >= 0 && <div className='detailcontainer '>
-                <ForcastDetail selectedForcast={selectedForcast}></ForcastDetail>
-            </div>}
-            </div>
-        </div>
 
         </>
     );
