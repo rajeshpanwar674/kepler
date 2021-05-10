@@ -3,24 +3,32 @@ const ForcastDetail = ({ selectedForcast }) => {
     return <div className="detaiRow">
         <div className="detailTitel">
             <h2>{title}</h2>
-        </div>
-        <div className="detailCenterrow">
-            <div className="info-box ">
-                <h4>{content}                </h4>
-            </div>
             <div className="duedateBox">
                 <h4>Due Date : {dueDate.toDateString()}</h4>
             </div>
-            <div className="imgBox"> <img src={imageSrc}></img></div>
         </div>
+        <div className="questionBox">
+                <h4>{content} </h4>
+        </div>
+        <div className="imgBox"> <img src={imageSrc}></img></div>
+ 
+          
+        
         <div className="forcastRow">
-            <div>Number of forcasts made : {forcastsMade}</div>
+            <div className="forcast-list">
+                <div className="forcast-list-item">Number of forcasts made :&nbsp;<b>{forcastsMade}</b> </div>
+                </div>
 
-            <div>Current Forcasts: {currentForcast}</div>
-            <div>Probability, {probability}</div>
+            <div className="forcast-list">
+            <div className="forcast-list-item">Current Forcasts :&nbsp; <b>{currentForcast}</b></div>
+            </div>
+            <div className="forcast-list">
+            <div className="forcast-list-item">Probability : &nbsp;<b>{probability}</b></div>
+                </div>
         </div>
+                    </div>
+ 
 
-    </div>
 
 
 }

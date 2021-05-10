@@ -39,6 +39,78 @@ const ForcastList = () => {
         dueDate: new Date(),
         imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
     },
+    {
+        id: 4,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+    {
+        id: 5,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+    {
+        id: 6,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+    {
+        id: 7,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+
+    {
+        id: 8,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+
+    {
+        id: 9,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
+    {
+        id: 10,
+        title: 'NSW Business Confidence',
+        content: 'Will New South Wales business confidence improve or fall in 2021?',
+        forcastsMade: '100',
+        currentForcast: '80%',
+        probability: 'yes',
+        dueDate: new Date(),
+        imageSrc: 'https://images.unsplash.com/photo-1576185850227-1f72b7f8d483?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1120&q=80'
+    },
     ]
 
     const search = (e) => {
@@ -52,9 +124,11 @@ const ForcastList = () => {
             </div>
             <div className='wrapper'>
                 <div className='listrow'>
-                    <div>
-                        <TextField id="outlined-basic" label="Search" variant="outlined" onChange={search}/>
+                <div class="searchBox">
+                        <TextField className="filedWrap" id="outlined-basic" label="Enter text for search" variant="outlined" onChange={search}/>
                     </div>
+                    <div id="scroolUi" className="sidebar">
+                    
                     <div className="lisWrap">
                         {forcasts.filter(forcast=> forcast.title.toLowerCase().includes(searchText.toLowerCase())).map((val) => {
                             return (
@@ -72,6 +146,7 @@ const ForcastList = () => {
                             );
                         })}
 
+                    </div>
                     </div>
                 </div>
                 <div className=' detailWrap'>

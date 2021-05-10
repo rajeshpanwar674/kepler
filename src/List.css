@@ -10,6 +10,7 @@ img {
 .wrapper {
   display: flex;
   height: calc(100vh - 55px);
+  padding-top: 55px;
 }
 
 .headerMain {
@@ -20,8 +21,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
 }
-
 .headerMain img {
   width: 35px;
 }
@@ -30,13 +31,27 @@ img {
   color: rgb(221, 210, 210);
   margin: 0;
 }
-
 /* side list css */
 .listrow {
   width: 350px;
   border-right: 1px solid #e2e8f0;
+  position: fixed;
+  left: 0;
+  height: 100%;  
 }
+.sidebar{
+  max-height: calc(100vh - 55px);
+  overflow: hidden;
+  overflow-y: auto;
 
+}
+.searchBox{
+  padding: 3em 1.5em 1em 1.5em;
+}
+.filedWrap{
+  width: 100%;
+  border-radius: 20px;
+}
 .listItem {
   border-top: 1px solid #e2e8f0;
   padding: 1em 1.5em;
@@ -71,68 +86,116 @@ img {
 .detailWrap {
   width: calc(100% - 350px);
   display: flex;
-  align-items: center;
+  margin-left: 350px;
+  align-items: flex-start;
+ 
   justify-content: center;
   height: calc(100vh - 55px);
+  padding-top: 3em;
+  
 }
 .detailcontainer {
   width: 95%;
-  margin: auto;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  
+  box-shadow: 0 1.5rem 2.5rem rgb(22 28 45 / 10%), 0 0.3rem 0.5rem -0.5rem rgb(22 28 45 / 5%);
 }
 
-.detaiRow {
-  /* display: flex;
-  flex-wrap: wrap; */
-}
 .detailTitel {
   width: 100%;
   padding: 1em;
   border-bottom: 1px solid #e2e8f0;
-}
-.detailTitel h2 {
-}
-.detailCenterrow {
   display: flex;
-}
-.detailCenterrow .info-box {
-  width: 33.33%;
-  padding: 0.5em;
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #e2e8f0;
-  border-top: 1px solid #c1c5ca;
-  border-bottom: 1px solid #c1c5ca;
 }
-.info-box h4 {
-  text-align: center;
-  font-weight: 500;
-}
-
 .duedateBox {
-  width: 33.33%;
   padding: 0.5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e2e8f0;
-  border: 1px solid #c1c5ca;
+  /* background-color: #edf0f3;
+  border: 1px solid #e3e6eb; */
 }
 .duedateBox h4 {
   text-align: center;
   font-weight: 500;
 }
 
-.imgBox {
-  width: 33.33%;
+
+.imgBox{
+  height: 25vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
+.imgBox img{
+  height: 100%;
+ 
+}
+.detailCenterrow{
+  border-top: 1px solid #e3e6eb;
+  padding: 1em;
+
+}
+
+
+
 
 .forcastRow {
   width: 100%;
-  max-width: 500px;
+  border-top: 1px solid #e3e6eb;
   margin: auto;
-  padding: 1em;
-  font-size: 1em;
-  font-weight: 500;
+  padding: 1.5em 0.5em;
+  font-size: 1.2em;
+  font-weight: 400;
+  display: flex;
 }
+
+
+.questionBox{
+  padding:1.5em;
+  
+}
+.forcast-list{
+  width: 33.33%;
+ 
+
+}
+.forcast-list-item{
+  width: 95%;
+  padding: 0.5em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf0f3;
+  border: 1px solid #e3e6eb;
+}
+.questionBox h4{
+  font-size: 25px;
+  text-align: center;
+}
+
+
+/*
+ *  STYLE 4
+ */
+
+ #scroolUi::-webkit-scrollbar-track
+ {
+   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+   background-color: #F5F5F5;
+ }
+ 
+ #scroolUi::-webkit-scrollbar
+ {
+   width: 5px;
+   background-color: #f5f5f5;
+ }
+ 
+ #scroolUi::-webkit-scrollbar-thumb
+ {
+   background-color: #a5a8aa;
+   border-radius: 20px;
+   
+ }
